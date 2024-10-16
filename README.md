@@ -8,31 +8,32 @@ Considere o robot móvel disponível para esta unidade curricular. Este desloca-
 
 #### CINEMÁTICA – TRAÇÃO DIFERENCIAL
 
-cenas teste
 
-$$
+```math
 \frac{d}{dt}
-\begin{bmatrix}
+\begin{pmatrix}
 x(t) \\
 y(t) \\
 \theta(t)
-\end{bmatrix}
+\end{pmatrix}
 =
-\begin{bmatrix}
+\begin{pmatrix}
 v(t) \cos(\theta(t)) \\
 v(t) \sin(\theta(t)) \\
 w(t)
-\end{bmatrix}
-$$
+\end{pmatrix}
+```
 
-Equations
 
-$$
+
+
+```math
 \begin{aligned}
 v(t) &= \frac{v_1(t) + v_2(t)}{2} \quad & w(t) &= \frac{v_1(t) + v_2(t)}{b} \\
 d(i) &= \frac{d_1(i) + d_2(i)}{2} \quad & \Delta\theta(i) &= \frac{d_1(i) - d_2(i)}{b}
 \end{aligned}
-$$
+```
+
 
 ### Constante que relaciona os impulsos com a distância percorrida
 
