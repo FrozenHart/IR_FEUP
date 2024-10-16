@@ -6,8 +6,6 @@ A porta computacional do robo é `COM10` e o ip para efetuar a comonicação do 
 
 Considere o robot móvel disponível para esta unidade curricular. Este desloca-se num plano horizontal por intermédio de duas rodas motrizes diferenciais e com uma terceira roda livre para apoio.
 
-### Constante que relaciona os impulsos com a distância percorrida
-
 #### CINEMÁTICA – TRAÇÃO DIFERENCIAL
 
 $$
@@ -32,8 +30,12 @@ d(i) &= \frac{d_1(i) + d_2(i)}{2} \quad & \Delta\theta(i) &= \frac{d_1(i) - d_2(
 \end{aligned}
 $$
 
-| Senc 1 | Senc 2 |
-| ------ | ------ |
-|        |        |
+### Constante que relaciona os impulsos com a distância percorrida
 
-### Distancia entre Rodas.
+| PWM $$ v_1 $$ | PWM $$ v_2 $$ | Senc_1 | Senc_2 | $$\Delta x_1(m)$$ | $$\Delta x_2 (m)$$ | $$k_1 = \frac{\Delta x_1}{Senc_1}(m/impulse)$$ | $$ k_2 = \frac{\Delta x_2}{Senc_2} (m/impulse)$$ |
+| ------------- | ------------- | ------ | ------ | ----------------- | ------------------ | ---------------------------------------------- | ------------------------------------------------ |
+|               |               |        |        |                   |                    |                                                |                                                  |
+|               |               |        |        |                   |                    |                                                |                                                  |
+|               |               |        |        |                   |                    |                                                |                                                  |
+
+###
