@@ -8,6 +8,8 @@ Considere o robot móvel disponível para esta unidade curricular. Este desloca-
 
 #### CINEMÁTICA – TRAÇÃO DIFERENCIAL
 
+cenas teste
+
 $$
 \frac{d}{dt}
 \begin{bmatrix}
@@ -32,10 +34,10 @@ $$
 
 ### Constante que relaciona os impulsos com a distância percorrida
 
-| PWM $$ v_1 $$ | PWM $$ v_2 $$ | Senc_1 | Senc_2 | $$\Delta x_1(m)$$ | $$\Delta x_2 (m)$$ | $$k_1 = \frac{\Delta x_1}{Senc_1}(m/impulse)$$ | $$ k_2 = \frac{\Delta x_2}{Senc_2} (m/impulse)$$ |
-| ------------- | ------------- | ------ | ------ | ----------------- | ------------------ | ---------------------------------------------- | ------------------------------------------------ |
-|               |               |        |        |                   |                    |                                                |                                                  |
-|               |               |        |        |                   |                    |                                                |                                                  |
-|               |               |        |        |                   |                    |                                                |                                                  |
+| PWM \( v_1 \) | PWM \( v_2 \) | \( Senc_1 \) (Impulses) | \( Senc_2 \) (Impulses) | \( \Delta x_1 \) (m) | \( \Delta x_2 \) (m) | \( k_1 = \frac{\Delta x_1}{Senc_1} \) (m/impulse) | \( k_2 = \frac{\Delta x_2}{Senc_2} \) (m/impulse) |
+| ------------- | ------------- | ----------------------- | ----------------------- | -------------------- | -------------------- | ------------------------------------------------- | ------------------------------------------------- |
+|               |               |                         |                         |                      |                      |                                                   |                                                   |
+|               |               |                         |                         |                      |                      |                                                   |                                                   |
+|               |               |                         |                         |                      |                      |                                                   |                                                   |
 
 ###
