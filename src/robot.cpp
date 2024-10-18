@@ -33,8 +33,8 @@
 
 robot_t::robot_t()
 {
-  pulses_to_meters = 0.0000532;
-  wheel_dist = 0.135;
+  pulses_to_meters = 0.000052696;
+  wheel_dist = 0.1225;
   dv_max = 5;
   dw_max = 10;
 }
@@ -42,18 +42,18 @@ robot_t::robot_t()
 void robot_t::odometry(void)
 {
   // Estimate wheels speed using the encoders
-  //v1e = pulses_to_meters * enc1 / dt;
-  //v2e = pulses_to_meters * enc2 / dt;
+  v1e = pulses_to_meters * enc1 / dt;
+  v2e = pulses_to_meters * enc2 / dt;
   
   // Alt version
-  //v1e = enc1 * TWO_PI * r1 / (2.0 * 1920.0 * dt);
-  //v2e = enc2 * TWO_PI * r2 / (2.0 * 1920.0 * dt);
+  v1e = enc1 * TWO_PI * r1 / (2.0 * 1920.0 * dt);
+  v2e = enc2 * TWO_PI * r2 / (2.0 * 1920.0 * dt);
 
-  w1e = enc1 * TWO_PI / (2.0 * 1920.0 * dt);
-  w2e = enc2 * TWO_PI / (2.0 * 1920.0 * dt);
+  // w1e = enc1 * TWO_PI / (2.0 * 1920.0 * dt);
+  // w2e = enc2 * TWO_PI / (2.0 * 1920.0 * dt);
 
-  v1e = w1e * r1;
-  v2e = w2e * r2;
+  // v1e = w1e * r1;
+  // v2e = w2e * r2;
 
   // Estimate robot speed
   ve = (v1e + v2e) / 2.0;
