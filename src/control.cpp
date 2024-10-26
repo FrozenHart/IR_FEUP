@@ -59,12 +59,29 @@ void control(robot_t& robot)
     } else if (robot.state == 10) { //Test
       robot.setRobotVW(0.1, 0);      
 
-    } else if (robot.state == 100) {
-      robot.v_req = 0;
-      robot.w_req = 0;
-
-    } else if (robot.state == 101) {
-      robot.setRobotVW(robot.v_req,robot.w_req);
+    } else if (robot.state == 99){ // Q5
+      //reset robot pose
+      robot.x = 0;
+      robot.y = 0;
+      robot.theta = 0;
+      robot.setState(100);
+    }else if (robot.state == 100) { //  Q4
+      robot.v_req = 0.2;
+      robot.w_req = 2 * IRLine.IR_values[1] / 1024.0  - 2 *  IRLine.IR_values[3] / 1024.0 ;
+      if((IRLine.IR_values[0] > 100) || (IRLine.IR_values[4] > 100))
+      {
+        robot.setState(101);
+      }
+    } else if (robot.state == 101) { // antes da curva
+      robot.v_req = 0.1;
+      robot.w_req = 2 * IRLine.IR_values[1] / 1024.0  - 2 *  IRLine.IR_values[3] / 1024.0 ;  
+      if((IRLine.IR_values[0] < 100) || (IRLine.IR_values[4] < 100))
+      {
+        robot.setState(100);
+      }
+    } else if (robot.state == 102) { // depois da curva
+      robot.v_req = 0.1;
+      robot.w_req = 4 * IRLine.IR_values[0] / 1024.0  - 4 *  IRLine.IR_values[4] / 1024.0 ;
     } else if (robot.state == 199) {
       /*robot.v_req = 0.1;
       robot.w_req = 4 * IRLine.IR_values[4] / 1024.0 

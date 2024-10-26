@@ -34,7 +34,7 @@
 robot_t::robot_t()
 {
   pulses_to_meters = 0.000052696;
-  wheel_dist = 0.1225;
+  wheel_dist = 0.1225; // Updated value
   dv_max = 5;
   dw_max = 10;
 }
@@ -46,8 +46,8 @@ void robot_t::odometry(void)
   v2e = pulses_to_meters * enc2 / dt;
   
   // Alt version
-  v1e = enc1 * TWO_PI * r1 / (2.0 * 1920.0 * dt);
-  v2e = enc2 * TWO_PI * r2 / (2.0 * 1920.0 * dt);
+  // v1e = enc1 * TWO_PI * r1 / (2.0 * 1920.0 * dt);
+  // v2e = enc2 * TWO_PI * r2 / (2.0 * 1920.0 * dt);
 
   // w1e = enc1 * TWO_PI / (2.0 * 1920.0 * dt);
   // w2e = enc2 * TWO_PI / (2.0 * 1920.0 * dt);
@@ -66,7 +66,7 @@ void robot_t::odometry(void)
   // Estimate pose
   x += ds * cos(theta + dtheta/2);
   y += ds * sin(theta + dtheta/2);
-  theta = theta + dtheta;
+  theta += dtheta;
 
   // Relative displacement
   rel_s += ds;

@@ -36,7 +36,7 @@ PID_t::PID_t()
   Ki = 11.6;
   Kp = 8.7;
   Kd = 0;
-  Kf = 9.8;
+  Kf = 345;
   
   m_max = 200;
   m_min = -200;
