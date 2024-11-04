@@ -95,8 +95,7 @@ v = \frac{k \times \text{enc}}{0.040} = 0.144914 \, \text{m/s}
 ```
 
 ```math
-k_f = \frac{\text{pwm}}{v} \\
-K_f = 345 \, \text{(m)}
+k_f = \frac{\text{pwm}}{v} = 345 \, \text{(m)}
 ```
 
 ### Controlador PID
@@ -119,5 +118,9 @@ Os valores experimentais de $K_p$, $K_i$ e $K_d$ foram ajustados da seguinte for
 Um controlador foi implementado para seguir uma linha utilizando os sensores IR do robô. Inicialmente, apenas os sensores das extremidades foram utilizados, e depois, o sensor central foi incorporado para seguir a borda da linha.
 
 Procedimento para o Seguimento de Linha:
-Definiu-se um estado para seguir a linha (Estado 100), aumentando progressivamente a velocidade linear até o robô alcançar o limite de estabilidade.
-A transição entre diferentes partes da pista foi realizada via estados programados no arquivo control.cpp.
+- Definiu-se um estado para seguir a linha (Estado 100), aumentando progressivamente a velocidade linear até o robô alcançar o limite de estabilidade.
+- A transição entre diferentes partes da pista foi realizada via estados programados no arquivo `control.cpp`.
+
+
+## Conclusão
+Este relatório apresentou a implementação e validação de um sistema de odometria e controle de um robô móvel com tração diferencial. A constante de conversão de pulsos para metros e a distância entre rodas foram calculadas experimentalmente, e o controlador PID+Feedforward foi ajustado para otimizar o desempenho do robô.
